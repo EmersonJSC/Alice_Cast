@@ -23,7 +23,7 @@
 	};
 
 	const connectWebSocket = () => {
-		websocket = new WebSocket('wss://alice.dcomp.ufsj.edu.br:33001');
+		websocket = new WebSocket('ws://alice.dcomp.ufsj.edu.br:33001');
 
 		websocket.onmessage = (event) => {
 			const receivedMessage = event.data;
