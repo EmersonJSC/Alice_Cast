@@ -28,8 +28,8 @@
 	};
 
 	const connectWebSocket = () => {
-		websocket = new WebSocket('wss://alice.dcomp.ufsj.edu.br/chat');
-
+		websocket = new WebSocket('wss://alice.dcomp.ufsj.edu.br/chat/chat');
+		
 		websocket.onmessage = (event) => {
 			const receivedMessage = event.data;
 			socketParam = JSON.parse(event.data);
