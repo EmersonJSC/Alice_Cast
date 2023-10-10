@@ -1,3 +1,3 @@
 all:
 	npm run build
-	cp -
+	cp -r build/* ../public_html/AliceCast
