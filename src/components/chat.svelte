@@ -13,24 +13,31 @@
 		'Rainha de Copas',
 		'Arganaz'
 	];
+	// Randomic
 	let sorteio = Math.floor(Math.random() * possibleNames.length);
+	var randomColor = Math.floor(Math.random() * 16777215).toString(16);
 	let nome = possibleNames[sorteio];
 
+	let socketParam = { nome: nome, mensagem: message, cor: randomColor };
+
 	const sendMessage = () => {
-		console.log(`${nome}: ${message}`);
-		websocket.send(`${nome}: ${message}`);
+		socketParam = { nome: nome, mensagem: message, cor: randomColor };
+		// console.log(socketParam);
+		websocket.send(JSON.stringify(socketParam));
 		message = '';
 	};
 
 	const connectWebSocket = () => {
-		websocket = new WebSocket('ws://alice.dcomp.ufsj.edu.br:33001');
+		websocket = new WebSocket('wss://alice.dcomp.ufsj.edu.br/chat');
 
 		websocket.onmessage = (event) => {
 			const receivedMessage = event.data;
-			console.log(receivedMessage);
-			historico = [...historico, receivedMessage];
+			socketParam = JSON.parse(event.data);
+			console.log(socketParam.mensagem);
+			historico = [...historico, socketParam];
 		};
 	};
+
 	onMount(() => {
 		connectWebSocket();
 	});
@@ -44,7 +51,7 @@
 		{#each historico as msg}
 			<div class="lineChat mx-3">
 				<p class="msg has-text-white-ter">
-					{msg}
+					<span style="color: #{msg.cor} !important;">{msg.nome}: </span>{msg.mensagem}
 				</p>
 			</div>
 		{/each}
@@ -96,7 +103,11 @@
 	}
 	.msg {
 		font-family: 'Roboto', sans-serif;
-		font-weight: 300;
+		font-weight: 400;
+	}
+	.msg span {
+		font-family: 'Roboto', sans-serif;
+		font-weight: 900;
 	}
 	form {
 		width: 100%;
