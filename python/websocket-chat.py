@@ -13,6 +13,8 @@ logging.basicConfig()
 logger=logging.getLogger() 
 logger.setLevel(logging.DEBUG) 
 
+PORT = 8081
+HOST = '0.0.0.0'
 clientes = set()
 
 async def handle_connection(websocket, path):
@@ -23,7 +25,7 @@ async def handle_connection(websocket, path):
     try:
         while True:
             # Receive a message from the client
-            logging.info(websocket.recv())  # will not print anything
+            logging.info(websocket)  # will not print anything
             message = await websocket.recv()
 
             # Broadcast the message to all connected clients
@@ -33,8 +35,6 @@ async def handle_connection(websocket, path):
         clientes.remove(websocket)
 
 # Start server
-start_server = websockets.serve(handle_connection, '0.0.0.0', 33001)
+start_server = websockets.serve(handle_connection, HOST, PORT)
 asyncio.get_event_loop().run_until_complete(start_server)
 asyncio.get_event_loop().run_forever()
-
-
