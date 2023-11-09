@@ -22,7 +22,7 @@ if os.path.exists(caminho_assets) and os.path.isdir(caminho_assets):
 
 # Verifique a existência de pastas e arquivos em cada pasta encontrada
 for pasta in pastas_assets:
-     print("Verificando os arquivos da pasta "+ pasta +" ...")
+     print(f" [+]Verificando os arquivos da pasta "+ pasta +" ...")
      caminho_pasta = os.path.join(caminho_assets, pasta)
      caminho_imagens = os.path.join(caminho_pasta, "images")
      caminho_documentos = os.path.join(caminho_pasta, "documents")
@@ -61,7 +61,7 @@ for pasta in pastas_assets:
                     conteudo = arquivo.read()
                     conteudo = conteudo.replace('__categoria__', str(dados["categoria"]))
                     conteudo = conteudo.replace('__nome__', str(dados["nome"]))
-                    conteudo = conteudo.replace('__assets__', os.path.join(caminho_documentos[len("static/"):]))
+                    conteudo = conteudo.replace('__assets__', os.path.join(caminho_pasta[len("static/"):]))
                     conteudo = conteudo.replace('__conteudo__',  str(dados["conteudo"]))
                     arquivo_svelte.write(conteudo)
                

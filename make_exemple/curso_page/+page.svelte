@@ -24,7 +24,7 @@
                 <h1 class="title has-text-grey-darker is-size-1">{nomeCurso}</h1>
             </div>
             <div>
-                <a class="box is-flex is-justify-content-center is-align-items-center my-4" href={`${Assets}/documents/Doc.zip`}>
+                <a class="box is-flex is-justify-content-center is-align-items-center my-4" href={`${Assets}/documents/doc.zip`}>
                     <i class="fa-solid fa-download fa-xl mx-3"></i>
                     <h1 class="is-size-5">Baixar arquivos do curso</h1>
                 </a>
