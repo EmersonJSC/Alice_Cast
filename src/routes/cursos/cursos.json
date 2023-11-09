@@ -1,0 +1,12 @@
+[
+  {
+    "nome": "AULA DE REACT",
+    "assets": "/static/Curso_Teste",
+    "categoria": "AULA"
+  },
+  {
+    "nome": "Nome_do_Curso",
+    "assets": "/static/nome_do_curso",
+    "categoria": "Curso"
+  }
+]

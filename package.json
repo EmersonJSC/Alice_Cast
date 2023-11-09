@@ -4,14 +4,15 @@
 	"scripts": {
 		"dev": "vite dev --port 33002",
 		"build": "vite build && npm run package",
-		"preview": "vite preview",
+		"preview": "vite preview --port 33002",
 		"package": "svelte-kit sync && svelte-package && publint",
 		"prepublishOnly": "npm run package",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json --watch",
 		"test": "playwright test",
 		"lint": "prettier --plugin-search-dir . --check . && eslint .",
-		"format": "prettier --plugin-search-dir . --write ."
+		"format": "prettier --plugin-search-dir . --write .",
+		"start": "npm run dev -- --host"
 	},
 	"exports": {
 		".": {
@@ -29,6 +30,7 @@
 	},
 	"devDependencies": {
 		"@playwright/test": "^1.28.1",
+		"@rollup/plugin-alias": "^5.0.1",
 		"@sveltejs/adapter-auto": "^2.0.0",
 		"@sveltejs/adapter-static": "^2.0.3",
 		"@sveltejs/kit": "^1.20.4",
@@ -52,6 +54,9 @@
 	"types": "./dist/index.d.ts",
 	"type": "module",
 	"dependencies": {
+		"@auth/core": "^0.17.0",
+		"@auth/sveltekit": "^0.3.10",
+		"fs": "^0.0.1-security",
 		"svelte-routing": "^2.5.0"
 	}
 }
