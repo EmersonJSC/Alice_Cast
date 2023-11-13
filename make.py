@@ -28,6 +28,15 @@ for pasta in pastas_assets:
      caminho_documentos = os.path.join(caminho_pasta, "documents")
      caminho_videos = os.path.join(caminho_pasta, "videos")
      content_json = os.path.join(caminho_pasta, "content.json")
+     download = os.path.join(caminho_pasta, "documents" ,"download.zip")
+     
+     print(download)
+     if (os.path.exists(download)):
+          download = 'true'
+     else:
+          download = 'false'
+          
+          
 
      if (os.path.exists(caminho_imagens) and os.path.exists(caminho_documentos) and os.path.exists(caminho_videos) and os.path.exists(content_json)):
           dados = None
@@ -48,7 +57,8 @@ for pasta in pastas_assets:
                "nome": dados["nome"],
                "assets": "/static/"+ pasta,
                "categoria": dados["categoria"],
-               "autor": dados["categoria"]
+               "autor": dados["autor"],
+               "caminho": pasta,
           }
           
           if novo_curso not in lista_cursos:
@@ -64,6 +74,7 @@ for pasta in pastas_assets:
                     conteudo = conteudo.replace('__nome__', str(dados["nome"]))
                     conteudo = conteudo.replace('__assets__', os.path.join(caminho_pasta[len("static/"):]))
                     conteudo = conteudo.replace('__conteudo__',  str(dados["conteudo"]))
+                    conteudo = conteudo.replace('__download__',  str(download))
                     arquivo_svelte.write(conteudo)
                
 

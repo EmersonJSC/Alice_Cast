@@ -2,11 +2,15 @@
   {
     "nome": "AULA DE REACT",
     "assets": "/static/Curso_Teste",
-    "categoria": "AULA"
+    "categoria": "AULA",
+    "autor": "Sem autor",
+    "caminho": "Curso_Teste"
   },
   {
     "nome": "Nome_do_Curso",
     "assets": "/static/nome_do_curso",
-    "categoria": "Curso"
+    "categoria": "Curso",
+    "autor": "Sem autor",
+    "caminho": "nome_do_curso"
   }
 ]

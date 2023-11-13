@@ -4,28 +4,48 @@
     let titulo  = data.nome;
     let autor  = data.autor;
     let assets = data.assets;
+    let imagePath = `${assets}/images/header.jpeg`;
+    let placeholderPath = "images/header.jpeg"
 
 </script>
 
-<div class="card mx-1 my-1">
-    <div class="card-image">
-        <img src="static/assetsGlobal/header.jpeg" alt="Placeholder image">
-    </div>
-    <div class="card-content">
-        <div class="content">
-            <h1 class="title is-size-4">{titulo}</h1>
-            <h3 class="subtitle is-size-6">{autor}</h3>
+<a href='cursos/curso/{data.caminho.toLowerCase()}'>
+    <div class="card mx-1 my-1">
+        <div class="card-image">
+            <img src={imagePath} style="z-index: 1;">
+            <img class="placeholder" src={placeholderPath} alt="Placeholder">
+        </div>
+        <div class="card-content">
+            <div class="content my-2">
+                <h1 class="title is-size-4">{titulo}</h1>
+                <h3 class="subtitle is-size-6">{autor}</h3>
+            </div>
         </div>
     </div>
-</div>
+</a>
 
 <style>
 	.card{
 		width: 100%;
         height: 100%;
+        position: relative;
         /* min-width: 100px; */
         /* max-width: 200px; */
 		/* height: 200px; */
 	}
+    .card-image{
+        width: 100%;
+        height: 75%;
+    }
+    .card-image img {
+        position: absolute;
+        /* top: 0;
+        left: 0; */
+        /* width: 100%;
+        height: 100%; */
+    }
+    .placeholder {
+        z-index: 0; /* Define a imagem de placeholder para estar atrás da imagem principal */
+    }
 
 </style>

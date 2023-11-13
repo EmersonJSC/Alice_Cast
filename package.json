@@ -2,7 +2,7 @@
 	"name": "alice-cast",
 	"version": "0.0.1",
 	"scripts": {
-		"dev": "vite dev ",
+		"dev": "vite dev --port 33002",
 		"build": "vite build && npm run package",
 		"preview": "vite preview --port 33002",
 		"package": "svelte-kit sync && svelte-package && publint",

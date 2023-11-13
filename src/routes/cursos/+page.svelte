@@ -26,9 +26,9 @@
 	<Tags />
 	<Header />
 
-	<div class="is-flex is-flex-wrap-wrap is-align-content-stretch is-justify-content-space-between mx-6">
+	<div class="main is-flex is-flex-wrap is-align-content-stretch is-justify-content-flex-start mx-6">
 		{#each Cursos as curso}
-			<div class="Cards-container my-1">
+			<div class="Cards-container my-3 mx-6">
 				<Card data={curso} />
 			</div>
 		{/each}
@@ -37,6 +37,9 @@
 </Layout>
 
 <style>
+	.main{
+		flex-wrap: wrap;
+	}
 	.dropdown{
 		border-color: #fff !important;
 	}
