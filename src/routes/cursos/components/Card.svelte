@@ -1,26 +1,15 @@
 <script>
     export let data;
-    let titulo  = data.Curso_Name
-    let autor  = data.Autor
-    let nomeDaImagem = "Exemple"
-    // import CardImagem from 'Database/Cursos/curso/nome_do_curso/header.jpeg'
-    let database = null;
+    console.log(data);
+    let titulo  = data.nome;
+    let autor  = data.autor;
+    let assets = data.assets;
 
-    // import * as arquivos from `../../../database/Cursos/${data.Curso_Name}`
-
-    import(`../../../database/Cursos/${nomeDaImagem}/*.jpeg`)
-        .then((module) => {
-            database = module;
-        })
-        .catch((error) => {
-            console.error('Erro ao carregar a imagem', error);
-        });
-    
 </script>
 
 <div class="card mx-1 my-1">
     <div class="card-image">
-        <!-- <img src={CardImagem} alt="Placeholder image"> -->
+        <img src="static/assetsGlobal/header.jpeg" alt="Placeholder image">
     </div>
     <div class="card-content">
         <div class="content">

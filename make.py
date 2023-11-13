@@ -47,7 +47,8 @@ for pasta in pastas_assets:
           novo_curso = {
                "nome": dados["nome"],
                "assets": "/static/"+ pasta,
-               "categoria": dados["categoria"]
+               "categoria": dados["categoria"],
+               "autor": dados["categoria"]
           }
           
           if novo_curso not in lista_cursos:
