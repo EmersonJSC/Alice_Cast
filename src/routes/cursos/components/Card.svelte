@@ -4,16 +4,17 @@
     let titulo  = data.nome;
     let autor  = data.autor;
     let assets = data.assets;
-    let imagePath = `${assets}/images/header.jpeg`;
-    let placeholderPath = "images/header.jpeg"
-
+   
+    const imagePath = '/images/header.jpeg';
+    
 </script>
 
 <a href='cursos/curso/{data.caminho.toLowerCase()}'>
     <div class="card mx-1 my-1">
         <div class="card-image">
-            <img src={imagePath} style="z-index: 1;">
-            <img class="placeholder" src={placeholderPath} alt="Placeholder">
+            
+            <img src="/images/header.jpeg "style="z-index: 1;" onerror="this.onerror=null; this.src='images/header.jpeg';">
+           
         </div>
         <div class="card-content">
             <div class="content my-2">

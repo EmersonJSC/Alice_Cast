@@ -28,14 +28,19 @@ for pasta in pastas_assets:
      caminho_documentos = os.path.join(caminho_pasta, "documents")
      caminho_videos = os.path.join(caminho_pasta, "videos")
      content_json = os.path.join(caminho_pasta, "content.json")
-     download = os.path.join(caminho_pasta, "documents" ,"download.zip")
      
-     print(download)
+     download = os.path.join(caminho_pasta, "documents" ,"download.zip")
+     images = os.path.join(caminho_pasta, "images" ,"header.jpeg")
+     
      if (os.path.exists(download)):
           download = 'true'
      else:
           download = 'false'
           
+     if (os.path.exists(images)):
+          images = 'true'
+     else:
+          images = 'false'
           
 
      if (os.path.exists(caminho_imagens) and os.path.exists(caminho_documentos) and os.path.exists(caminho_videos) and os.path.exists(content_json)):
@@ -55,10 +60,11 @@ for pasta in pastas_assets:
           
           novo_curso = {
                "nome": dados["nome"],
-               "assets": "/static/"+ pasta,
+               "assets": "assets/"+ pasta,
                "categoria": dados["categoria"],
                "autor": dados["autor"],
                "caminho": pasta,
+               "header": images
           }
           
           if novo_curso not in lista_cursos:
