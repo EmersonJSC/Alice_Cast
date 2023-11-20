@@ -13,7 +13,7 @@
     <div class="card mx-1 my-1">
         <div class="card-image">
             
-            <img src="/images/header.jpeg "style="z-index: 1;" onerror="this.onerror=null; this.src='images/header.jpeg';">
+            <img src="/images/header.jpeg">
            
         </div>
         <div class="card-content">

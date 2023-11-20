@@ -6,7 +6,7 @@
     let nomeCurso =  "AULA DE REACT";
     let conteudo = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum";
 
-    let Assets = '/assets/Curso_Teste';
+    let Assets = '/e';
 
 </script>
 
@@ -23,14 +23,12 @@
             <div class="title">
                 <h1 class="title has-text-grey-darker is-size-1">{nomeCurso}</h1>
             </div>
-            {#if true}
             <div>
-                <a class="box is-flex is-justify-content-center is-align-items-center my-4" href={`${Assets}/documents/doc.zip`}>
+                <a class="box is-flex is-justify-content-center is-align-items-center my-4" href={`${Assets}/dowloads.zip`}>
                     <i class="fa-solid fa-download fa-xl mx-3"></i>
                     <h1 class="is-size-5">Baixar arquivos do curso</h1>
                 </a>
             </div>
-            {/if}
             <div class="conteudo">
                 <p>     
                     {conteudo}

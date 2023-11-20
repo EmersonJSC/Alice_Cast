@@ -1,7 +1,7 @@
 <script>
 	import logo from "../img/AliceCastRed.png"
 
-	const menu = [{ nome:"Home", icone:"fa-house", link:"/" }, { nome:"Sala Zoo", icone:"fa-video", link:"/player" }, { nome:"Cursos", icone:"fa-graduation-cap", link:"/cursos" }]
+	const menu = [{ nome:"Home", icone:"fa-house", link:"#" }, { nome:"Sala Zoo", icone:"fa-video", link:"/player" }, { nome:"Cursos", icone:"fa-graduation-cap", link:"/cursos" }]
 </script>
 
 <div class="SideBar full background is-flex is-flex-direction-column">

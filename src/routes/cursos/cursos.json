@@ -5,7 +5,7 @@
     "categoria": "AULA",
     "autor": "Sem autor",
     "caminho": "Curso_Teste",
-    "header": "true"
+    "header": "Curso_Teste/images/header.jpeg"
   },
   {
     "nome": "Nome_do_Curso",
@@ -13,6 +13,6 @@
     "categoria": "Curso",
     "autor": "Sem autor",
     "caminho": "nome_do_curso",
-    "header": "false"
+    "header": "nome_do_curso/images/header.jpeg"
   }
 ]
