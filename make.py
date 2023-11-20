@@ -31,17 +31,11 @@ for pasta in pastas_assets:
      
      download = os.path.join(caminho_pasta, "documents" ,"download.zip")
      images = os.path.join(caminho_pasta, "images" ,"header.jpeg")
+
+     if( not os.path.exists(images)):
+          shutil.copy("make_exemple/header.jpeg","static/assets/"+ pasta +"/images")
      
-     if (os.path.exists(download)):
-          download = 'true'
-     else:
-          download = 'false'
-          
-     if (os.path.exists(images)):
-          images = 'true'
-     else:
-          images = 'false'
-          
+     compactar_pasta("static/assets/"+ pasta,"static/assets/"+ pasta +"/download")
 
      if (os.path.exists(caminho_imagens) and os.path.exists(caminho_documentos) and os.path.exists(caminho_videos) and os.path.exists(content_json)):
           dados = None
@@ -89,3 +83,14 @@ for pasta in pastas_assets:
           print("Você precisa separar os arquvis em 'images', 'documents', 'videos', 'contet.json' ")          
 
 
+
+def compactar_pasta(caminho_pasta, caminho_destino_zip):
+    try:
+        # Garante que o caminho de destino exista
+        os.makedirs(os.path.dirname(caminho_destino_zip), exist_ok=True)
+
+        # Compacta a pasta no arquivo ZIP
+        shutil.make_archive(caminho_destino_zip, 'zip', caminho_pasta)
+        print(f"Pasta compactada e salva em {caminho_destino_zip}.zip")
+    except Exception as e:
+        print(f"Ocorreu um erro ao compactar a pasta: {e}")
